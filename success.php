@@ -116,21 +116,6 @@ if (mysqli_num_rows($result) > 0) {
 
 mysqli_close($conn);
 
-$phpdate = strtotime( $dateIndia );
-$mysqldate = date( 'd-m-Y', $phpdate );
-
-
-$to = $buyer_email;
-$subject = 'Thank You For your Payment';
-      
-$message = "Thank You For your Payment";
-         
-$header = "From:".$mailsendfrom." \r\n";
-$header .= 'Bcc: XXXXXXXX@XXX.XXX' . "\r\n";
-$header .= "MIME-Version: 1.0\r\n";
-$header .= "Content-type: text/html\r\n";
-         
-$retval = mail ($to,$subject,$message,$header);
 
 }    
 {
