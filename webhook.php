@@ -18,6 +18,8 @@ $mac_calculated = hash_hmac("sha1", implode("|", $data), "$salt");
 if($mac_provided == $mac_calculated){
     if($data['status'] == "Credit"){
         echo "OK";
+        date_default_timezone_set("Asia/Calcutta");
+        $dateIndia = date("Y-m-d "."h:i:sa");
         $phpdate = strtotime( $dateIndia );
         $mysqldate = date( 'd-m-Y', $phpdate );
 
