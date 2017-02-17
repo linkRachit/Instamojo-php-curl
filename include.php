@@ -23,4 +23,6 @@ $mailsendfrom = "XXXXXXXXXXXXX@gmail.com";
 $namesendfrom = "no-reply";
 $mailreplyto = "XXXXXXXXXXXXXX@gmail.com";
 $usernamereplyto = "no-reply";
+
+$bcc1= "XXXXXXXXXXXXXX@gmail.com";
 ?>
