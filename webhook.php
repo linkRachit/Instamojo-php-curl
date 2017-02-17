@@ -28,7 +28,7 @@ if($mac_provided == $mac_calculated){
         $message = "Thank You For your Payment";
                  
         $header = "From:".$mailsendfrom." \r\n";
-        $header .= 'Bcc: XXXXXXXX@XXX.XXX' . "\r\n";
+        $header .= 'Bcc: '.$bcc1 . "\r\n";
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type: text/html\r\n";
                  
