@@ -7,7 +7,7 @@ $salt = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
 $redirect_url = "http://localhost/Instamojo-php-curl/success";
 
-$webhook = "http://www.solomofy.com/webhook/";
+$webhook = "http://www.XXXXXXX.com/webhook/";
 
 
 $servername = "localhost";
