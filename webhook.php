@@ -2,6 +2,7 @@
 require '../include.php';
 
 $data = $_POST;
+$postdata = json_encode($_POST);
 $mac_provided = $data['mac'];  // Get the MAC from the POST data
 unset($data['mac']);  // Remove the MAC key from the data.
 $ver = explode('.', phpversion());
@@ -18,6 +19,26 @@ $mac_calculated = hash_hmac("sha1", implode("|", $data), "$salt");
 if($mac_provided == $mac_calculated){
     if($data['status'] == "Credit"){
         echo "OK";
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $requestsite.$_POST['payment_request_id'].'/'.$_POST['payment_id'].'/');
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+        curl_setopt($ch, CURLOPT_HTTPHEADER,
+        array($instamojoapikey,$instamojoauthtoken));
+
+
+        $response = curl_exec($ch);
+
+        curl_close($ch); 
+
+
+        $json = json_decode($response, true);        
+
+        $buyer_email = $json['payment_request']['payment']['buyer_email'];
+
         date_default_timezone_set("Asia/Calcutta");
         $dateIndia = date("Y-m-d "."h:i:sa");
         $phpdate = strtotime( $dateIndia );
