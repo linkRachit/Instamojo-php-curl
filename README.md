@@ -1,6 +1,6 @@
 # Instamojo-php-curl
 
-This project is the basic integration of Instamojo API through curl with confirmation mail on successful payment with database update.
+This project is the basic integration of Instamojo API through curl with confirmation mail on successful payment with database update through webhook.
 
 ##Setup
 
