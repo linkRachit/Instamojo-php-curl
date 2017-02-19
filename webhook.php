@@ -81,7 +81,7 @@ if($mac_provided == $mac_calculated){
 
 
 
-        date_default_timezone_set("Asia/Calcutta");
+        date_default_timezone_set($location);
         $dateIndia = date("Y-m-d "."h:i:sa");
         $phpdate = strtotime( $dateIndia );
         $mysqldate = date( 'd-m-Y', $phpdate );
