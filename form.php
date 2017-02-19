@@ -11,6 +11,12 @@
 <script type="text/javascript">
 function validateMyForm()
 {
+  if($('#amount').val()<9)
+  { 
+    alert("Amount must be equal to or greater than 9");
+    //returnToPreviousPage();
+    return false;
+  }
   if($('#phone').val().length!=10)
   { 
     alert("Check Phone Number");
