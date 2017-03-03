@@ -124,3 +124,5 @@ For payments use the following card details:
     3D-secure password: 1221
 
 ```    
+
+note- You do not have to submit documents or go through the onboarding flow when you create a test account.
